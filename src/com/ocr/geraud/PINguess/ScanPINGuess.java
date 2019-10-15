@@ -2,7 +2,7 @@ package com.ocr.geraud.PINguess;
 
 import java.util.Scanner;
 
-public class ScanPINGuess implements PINguess{
+public class ScanPINGuess implements PINguess {
 
     /**
      * Player try to find PIN
@@ -22,10 +22,11 @@ public class ScanPINGuess implements PINguess{
                 isValid = false;
                 System.out.println("Vous devez saisir une combinaison composée uniquement de chiffres.");
             }
-            if (combinaison.length() != 4 ) System.out.println("Combinaison de 4 chiffres ni plus ni moins svp .");
+            if (combinaison.length() != 4) System.out.println("Combinaison de 4 chiffres ni plus ni moins svp .");
 
         } while (combinaison.length() != 4 || isValid == false);
         return combinaison;
 
     }
+
 }
