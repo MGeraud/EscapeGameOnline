@@ -1,18 +1,21 @@
 package com.ocr.geraud.player;
 
-public class AIPlayer {
+public class AIPlayer extends Player {
 
 
-    private String secretAIPIN = "";
+    private String secretPIN = "";
     int i;
 
-    public void createSecretAIPIN() {
+    public void createSecretPIN() {
         for (i = 0; i <= 3; i++) {
             ;
             int tmpDigit = (int) (10 * (Math.random()));
-            char tmpChar = Character.forDigit(tmpDigit, 10);
-            String tmpString = Character.toString(tmpChar);
-            secretAIPIN = secretAIPIN + tmpString;
+            String tmpString = Integer.toString(tmpDigit);
+            secretPIN = secretPIN + tmpString;
         }
+    }
+
+    public String getSecretPIN() {
+        return secretPIN;
     }
 }

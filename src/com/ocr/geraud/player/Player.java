@@ -1,6 +1,14 @@
 package com.ocr.geraud.player;
 
-public class Player {
+public abstract class Player {
+
+    private String secretPIN = "";
+
+    public void createSecretPIN(){
+        System.out.println("Création de la combinaison secète ...");
+    }
+
+
 
 
 }
