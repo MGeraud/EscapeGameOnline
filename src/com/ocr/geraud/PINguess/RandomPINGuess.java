@@ -1,4 +1,8 @@
 package com.ocr.geraud.PINguess;
 
-public class RandomPINGuess {
+public class RandomPINGuess implements PINguess{
+    @Override
+    public String pinTest() {
+        return null;
+    }
 }

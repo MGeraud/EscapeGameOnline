@@ -2,10 +2,9 @@ package com.ocr.geraud.player;
 
 public class AIPlayer extends Player {
 
-
-    private String secretPIN = "";
     int i;
 
+    @Override
     public void createSecretPIN() {
         for (i = 0; i <= 3; i++) {
             ;

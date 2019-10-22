@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class HumanPlayer extends Player {
 
-    private String secretPIN ="";
-
+    @Override
     public void createSecretPIN() {
         Scanner s = new Scanner(System.in);
 
