@@ -1,5 +1,5 @@
 package com.ocr.geraud.gameMode;
 
-public interface ModeJeu {
+public interface ModeJeuStrategy {
     public void jouer();
 }

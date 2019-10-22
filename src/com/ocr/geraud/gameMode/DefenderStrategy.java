@@ -1,7 +1,8 @@
 package com.ocr.geraud.gameMode;
 
 
-public class Dual {
+public class DefenderStrategy {
+
 
 
 }
