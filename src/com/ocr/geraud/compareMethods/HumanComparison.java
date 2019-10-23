@@ -1,11 +1,13 @@
 package com.ocr.geraud.compareMethods;
 
+import com.ocr.geraud.player.Player;
+
 import java.util.Scanner;
 
 public class HumanComparison implements Comparison{
 
     @Override
-    public String comparer() {
+    public void comparer(Player player) {
 
         String humanComparison;
         int nullIsNotValid;
@@ -23,6 +25,6 @@ public class HumanComparison implements Comparison{
                 i = i + 1;
                 }while (i <=3);
             } while (  nullIsNotValid != 4); // double boucle qui permet de verifier contenu valide (longueur et type de contenu)
-        return humanComparison ;
+        player.setTmpComparisonAnswer(humanComparison);
     }
 }

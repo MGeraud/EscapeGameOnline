@@ -1,5 +1,7 @@
 package com.ocr.geraud.PINguess;
 
+import com.ocr.geraud.player.Player;
+
 import java.util.Scanner;
 
 public class ScanPINGuess implements PINguess {
@@ -8,7 +10,7 @@ public class ScanPINGuess implements PINguess {
      * Player try to find PIN
      */
     @java.lang.Override
-    public String pinTest() {
+    public void pinTest(Player attaquant, Player defenseur) {
         Scanner s = new Scanner(System.in);
         String combinaison;
         boolean isValid;
@@ -25,8 +27,8 @@ public class ScanPINGuess implements PINguess {
             if (combinaison.length() != 4) System.out.println("Combinaison de 4 chiffres ni plus ni moins svp .");
 
         } while (combinaison.length() != 4 || isValid == false);
-        return combinaison;
 
+        attaquant.setTmpPIN(combinaison);
     }
 
 }
