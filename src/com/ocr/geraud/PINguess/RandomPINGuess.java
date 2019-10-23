@@ -27,7 +27,7 @@ public class RandomPINGuess implements PINguess{
                         tmpString = tmpString + attaquant.getTmpPIN().charAt(i);
                         break;
                     case '+' :
-                        
+
                 }
             }
         }
