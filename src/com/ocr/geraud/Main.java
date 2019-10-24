@@ -11,6 +11,8 @@ import java.util.Properties;
 public class Main {
 
     public static void main(String[] args){
+        Game p = new Game();
+        System.out.println(p.maValeur);
 
 
 
