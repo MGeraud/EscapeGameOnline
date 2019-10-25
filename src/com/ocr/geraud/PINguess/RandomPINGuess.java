@@ -1,8 +1,11 @@
 package com.ocr.geraud.PINguess;
 
+import com.ocr.geraud.LoadProperties;
 import com.ocr.geraud.player.Player;
 
 public class RandomPINGuess implements PINguess{
+    String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
+    int pinLenght = Integer.parseInt(pinLenghtString);
 
     @Override
     public void pinTest(Player attaquant, Player defenseur) {
@@ -10,7 +13,7 @@ public class RandomPINGuess implements PINguess{
         // creation au 1er essai donc hasard complet
         if (attaquant.getTmpPIN() == "") {
             int i;
-            for (i = 0; i <= 3; i++) {
+            for (i = 0; i <= (pinLenght - 1); i++) {
                 ;
                 int tmpDigit = (int) (10 * (Math.random()));
                 String tmpString = Integer.toString(tmpDigit);

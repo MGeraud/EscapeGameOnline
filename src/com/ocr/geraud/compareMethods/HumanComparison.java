@@ -1,5 +1,6 @@
 package com.ocr.geraud.compareMethods;
 
+import com.ocr.geraud.LoadProperties;
 import com.ocr.geraud.player.Player;
 
 import java.util.Scanner;
@@ -8,6 +9,8 @@ public class HumanComparison implements Comparison{
 
     @Override
     public void comparer(Player player) {
+        String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
+        int pinLenght = Integer.parseInt(pinLenghtString);
 
         String humanComparison;
         int nullIsNotValid;
@@ -23,8 +26,8 @@ public class HumanComparison implements Comparison{
                 if (humanComparison.charAt(i) == '=' || humanComparison.charAt(i) == '+' || humanComparison.charAt(i) == '-')
                     nullIsNotValid++;
                 i = i + 1;
-                }while (i <=3);
-            } while (  nullIsNotValid != 4); // double boucle qui permet de verifier contenu valide (longueur et type de contenu)
+                }while (i <= (pinLenght - 1 ));
+            } while (  nullIsNotValid != pinLenght); // double boucle qui permet de verifier contenu valide (longueur et type de contenu)
         player.setTmpComparisonAnswer(humanComparison);
     }
 }

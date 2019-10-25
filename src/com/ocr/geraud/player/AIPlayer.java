@@ -1,12 +1,16 @@
 package com.ocr.geraud.player;
 
+import com.ocr.geraud.LoadProperties;
+
 public class AIPlayer extends Player {
 
     int i;
 
     @Override
     public void createSecretPIN() {
-        for (i = 0; i <= 3; i++) {
+        String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
+        int pinLenght = Integer.parseInt(pinLenghtString);
+        for (i = 0; i <= (pinLenght - 1); i++) {
             ;
             int tmpDigit = (int) (10 * (Math.random()));
             String tmpString = Integer.toString(tmpDigit);

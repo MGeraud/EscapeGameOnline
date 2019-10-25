@@ -1,10 +1,14 @@
 package com.ocr.geraud.PINguess;
 
+import com.ocr.geraud.LoadProperties;
 import com.ocr.geraud.player.Player;
 
 import java.util.Scanner;
 
 public class ScanPINGuess implements PINguess {
+
+    String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
+    int pinLenght = Integer.parseInt(pinLenghtString);
 
     /**
      * Player try to find PIN
@@ -24,9 +28,9 @@ public class ScanPINGuess implements PINguess {
                 isValid = false;
                 System.out.println("Vous devez saisir une combinaison composée uniquement de chiffres.");
             }
-            if (combinaison.length() != 4) System.out.println("Combinaison de 4 chiffres ni plus ni moins svp .");
+            if (combinaison.length() != pinLenght) System.out.println("Combinaison de 4 chiffres ni plus ni moins svp .");
 
-        } while (combinaison.length() != 4 || isValid == false);
+        } while (combinaison.length() != pinLenght || isValid == false);
 
         attaquant.setTmpPIN(combinaison);
     }
