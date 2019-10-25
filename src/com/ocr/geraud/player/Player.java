@@ -6,6 +6,7 @@ public abstract class Player {
     protected String tmpPIN ="";
     protected String tmpComparisonAnswer= "";
 
+
     public void createSecretPIN(){
         System.out.println("Création de la combinaison secète ...");
     }
