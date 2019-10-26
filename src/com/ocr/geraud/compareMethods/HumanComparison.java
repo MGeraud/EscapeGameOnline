@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class HumanComparison implements Comparison{
 
     @Override
-    public void comparer(Player player) {
+    public void comparer(Player challenger, Player defender) {
         String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
         int pinLenght = Integer.parseInt(pinLenghtString);
 
@@ -28,6 +28,6 @@ public class HumanComparison implements Comparison{
                 i = i + 1;
                 }while (i <= (pinLenght - 1 ));
             } while (  nullIsNotValid != pinLenght); // double boucle qui permet de verifier contenu valide (longueur et type de contenu)
-        player.setTmpComparisonAnswer(humanComparison);
+        challenger.setTmpComparisonAnswer(humanComparison);
     }
 }

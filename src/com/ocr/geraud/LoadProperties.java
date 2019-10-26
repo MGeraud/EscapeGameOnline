@@ -4,10 +4,14 @@ import java.util.Properties;
 
 public class LoadProperties {
 
+    /**
+     * Loader properties from config.properties
+     */
+
     private static Properties props = null;
     private static final String fichierProperties = "config.properties";
 
-    // Singleton
+
     private static LoadProperties instance = new LoadProperties();
 
     public static LoadProperties getInstance() {
