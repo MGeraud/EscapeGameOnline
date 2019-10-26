@@ -20,20 +20,20 @@ public class RandomPINGuess implements PINguess{
                 createTmpPIN = createTmpPIN + tmpString;
             }
         } else {
-            // boucle passant chaque caractere de la comparaison pour déterminer les nouvelles limmites du random
+            // boucle passant chaque caractere de la comparaison pour lancer un nouveau random
             int i;
             int tmpDigit;
-            String tmpString ="";
-            for (i=0 ; i <= 3 ; i++) {
-                switch (defenseur.getTmpComparisonAnswer().charAt(i)) {
-                    case '=' :
-                        tmpString = tmpString + attaquant.getTmpPIN().charAt(i);
-                        break;
-                    case '+' :
-
+            String tmpString = "";
+            for (i=0 ; i <= (pinLenght - 1) ; i++) {
+                if (defenseur.getTmpComparisonAnswer().charAt(i) == '=') {
+                    tmpString = tmpString + attaquant.getTmpPIN().charAt(i);
+                } else  {
+                        tmpDigit = attaquant.getLimitMin()[i] + (int) ( Math.random() * ((attaquant.getLimitMax()[i] - attaquant.getLimitMin()[i]) + 1 ) );
+                        tmpString = tmpString + tmpDigit;
                 }
             }
+            createTmpPIN = tmpString;
         }
-
+        attaquant.setTmpPIN(createTmpPIN);
     }
 }

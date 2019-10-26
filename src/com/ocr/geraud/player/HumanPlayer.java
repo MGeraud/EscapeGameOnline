@@ -9,9 +9,6 @@ public class HumanPlayer extends Player {
     @Override
     public void createSecretPIN() {
         Scanner s = new Scanner(System.in);
-        String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
-        int pinLenght = Integer.parseInt(pinLenghtString);
-
 
         boolean isValid;
         System.out.println("Veuillez choisir une combinaison secrete, je ne la montre pas au robot qui va devoir la deviner, promis!!!");

@@ -8,8 +8,7 @@ public class AIPlayer extends Player {
 
     @Override
     public void createSecretPIN() {
-        String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
-        int pinLenght = Integer.parseInt(pinLenghtString);
+
         for (i = 0; i <= (pinLenght - 1); i++) {
             ;
             int tmpDigit = (int) (10 * (Math.random()));
