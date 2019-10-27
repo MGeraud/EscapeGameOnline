@@ -39,10 +39,10 @@ public class HumanComparison implements Comparison{
         for (int i = 0 ; i <= (pinLenght -1 ) ; i++ ) {
             if (humanComparison.charAt(i) == '+') {
                 int valueOfChar = Character.getNumericValue(challenger.getTmpPIN().charAt(i));
-                challenger.limitMin[i] = valueOfChar;
+                challenger.limitMin[i] = (valueOfChar + 1);
             } else if (humanComparison.charAt(i) == '-'){
                 int valueOfChar = Character.getNumericValue(challenger.getTmpPIN().charAt(i));
-                challenger.limitMax[i] = valueOfChar;
+                challenger.limitMax[i] = (valueOfChar - 1);
             }
         }
         defender.setTmpComparisonAnswer(humanComparison);

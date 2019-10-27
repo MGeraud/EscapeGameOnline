@@ -3,7 +3,7 @@ package com.ocr.geraud.player;
 import com.ocr.geraud.LoadProperties;
 
 public class AIPlayer extends Player {
-
+    private String devMode = LoadProperties.getInstance().getProperty("devMode");
     int i;
 
     @Override
@@ -15,6 +15,7 @@ public class AIPlayer extends Player {
             String tmpString = Integer.toString(tmpDigit);
             secretPIN = secretPIN + tmpString;
         }
+        if (devMode.equals("true")) System.out.println(secretPIN);
     }
 
     public String getSecretPIN() {

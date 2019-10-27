@@ -28,7 +28,7 @@ public class RandomPINGuess implements PINguess{
                 if (defenseur.getTmpComparisonAnswer().charAt(i) == '=') {
                     tmpString = tmpString + attaquant.getTmpPIN().charAt(i);
                 } else  {
-                        tmpDigit = (attaquant.getLimitMin()[i] +1 ) + (int) ( Math.random() * ((attaquant.getLimitMax()[i] - attaquant.getLimitMin()[i])  ) );
+                        tmpDigit = attaquant.getLimitMin()[i]  + (int) ( Math.random() * ((attaquant.getLimitMax()[i] - attaquant.getLimitMin()[i]) +1 ) );
                         tmpString = tmpString + tmpDigit;
                 }
             }
