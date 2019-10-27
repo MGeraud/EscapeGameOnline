@@ -9,12 +9,12 @@ public abstract class Player {
     protected String secretPIN = "";
     protected String tmpPIN ="";
     protected String tmpComparisonAnswer= "";
-    protected int[] limitMax = new int[pinLenght];
-    protected int [] limitMin = new int[pinLenght];
+    public int[] limitMax = new int[pinLenght];
+    public int [] limitMin = new int[pinLenght];
 
     public void resetLimitMax (){
         int i;
-        for (i=0 ; i <= pinLenght; i++) {
+        for (i=0 ; i <= (pinLenght - 1); i++) {
             limitMax[i] = 9;
         }
     }
@@ -50,15 +50,15 @@ public abstract class Player {
         return limitMax;
     }
 
-    public void setLimitMax(int[] limitMax) {
-        this.limitMax = limitMax;
-    }
+
 
     public int[] getLimitMin() {
         return limitMin;
     }
 
-    public void setLimitMin(int[] limitMin) {
-        this.limitMin = limitMin;
+
+
+    public String getSecretPIN() {
+        return secretPIN;
     }
 }

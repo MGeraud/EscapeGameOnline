@@ -11,8 +11,10 @@ import java.util.Properties;
 public class Main {
 
     public static void main(String[] args){
-        Game p = new Game();
-        System.out.println(p.maValeur);
+        AIPlayer p = new AIPlayer();
+        p.resetLimitMax();
+        p.limitMax[2] = 7;
+        System.out.println(p.getLimitMax()[2]);
 
 
 

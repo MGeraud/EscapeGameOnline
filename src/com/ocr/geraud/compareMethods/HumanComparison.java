@@ -7,6 +7,13 @@ import java.util.Scanner;
 
 public class HumanComparison implements Comparison{
 
+    /**
+     * Demande au joueur de rentrer la comparaison avec son code secret
+     * redefini les limites min et max du random Bot en fonction de la reponse
+     * @param challenger
+     * @param defender
+     */
+
     @Override
     public void comparer(Player challenger, Player defender) {
         String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
@@ -29,5 +36,15 @@ public class HumanComparison implements Comparison{
                 }while (i <= (pinLenght - 1 ));
             } while (  nullIsNotValid != pinLenght); // double boucle qui permet de verifier contenu valide (longueur et type de contenu)
         challenger.setTmpComparisonAnswer(humanComparison);
-    }
+        for (int i = 0 ; i <= pinLenght ; i++ ) {
+            if (humanComparison.charAt(i) == '+') {
+                int valueOfChar = Character.getNumericValue(challenger.getTmpPIN().charAt(i));
+                challenger.limitMin[i] = valueOfChar;
+            } else if (humanComparison.charAt(i) == '-'){
+                int valueOfChar = Character.getNumericValue(challenger.getTmpPIN().charAt(i));
+                challenger.limitMax[i] = valueOfChar;
+            }
+        }
+
+        }
 }
