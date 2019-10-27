@@ -45,6 +45,6 @@ public class HumanComparison implements Comparison{
                 challenger.limitMax[i] = valueOfChar;
             }
         }
-
+        defender.setTmpComparisonAnswer(humanComparison);
         }
 }

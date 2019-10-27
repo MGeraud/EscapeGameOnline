@@ -33,6 +33,7 @@ public class RandomPINGuess implements PINguess{
                 }
             }
             createTmpPIN = tmpString;
+            System.out.println("Mr Bot propose : " + tmpString);
         }
         attaquant.setTmpPIN(createTmpPIN);
     }

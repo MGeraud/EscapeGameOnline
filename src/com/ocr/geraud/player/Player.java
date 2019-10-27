@@ -1,6 +1,8 @@
 package com.ocr.geraud.player;
 
 import com.ocr.geraud.LoadProperties;
+import com.ocr.geraud.PINguess.PINguess;
+import com.ocr.geraud.PINguess.RandomPINGuess;
 
 public abstract class Player {
     protected String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
@@ -11,6 +13,8 @@ public abstract class Player {
     protected String tmpComparisonAnswer= "";
     public int[] limitMax = new int[pinLenght];
     public int [] limitMin = new int[pinLenght];
+
+
 
     public void resetLimitMax (){
         int i;
@@ -50,13 +54,9 @@ public abstract class Player {
         return limitMax;
     }
 
-
-
     public int[] getLimitMin() {
         return limitMin;
     }
-
-
 
     public String getSecretPIN() {
         return secretPIN;

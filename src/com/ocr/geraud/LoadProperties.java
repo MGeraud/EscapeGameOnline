@@ -5,7 +5,7 @@ import java.util.Properties;
 public class LoadProperties {
 
     /**
-     * Loader properties from config.properties
+     * Loader : properties from config.properties
      */
 
     private static Properties props = null;

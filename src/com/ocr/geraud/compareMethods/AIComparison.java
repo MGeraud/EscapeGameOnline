@@ -10,7 +10,7 @@ public class AIComparison implements Comparison{
         String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
         int pinLenght = Integer.parseInt(pinLenghtString);
         String tmpComparison = "";
-        for (int i = 0 ; i <= pinLenght ; i++ ){
+        for (int i = 0 ; i <= (pinLenght - 1) ; i++ ){
             if (challenger.getTmpPIN().charAt(i) == defender.getSecretPIN().charAt(i)) {
                 tmpComparison = tmpComparison + "=";
             } else if (challenger.getTmpPIN().charAt(i) < defender.getSecretPIN().charAt(i)) {
@@ -21,6 +21,7 @@ public class AIComparison implements Comparison{
 
             }
         }
+        defender.setTmpComparisonAnswer(tmpComparison);
         System.out.println("Mr Bot vous annonce le résultat de la comparaison : " + tmpComparison);
     }
 }
