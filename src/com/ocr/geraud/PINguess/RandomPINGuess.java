@@ -28,13 +28,13 @@ public class RandomPINGuess implements PINguess{
                 if (defenseur.getTmpComparisonAnswer().charAt(i) == '=') {
                     tmpString = tmpString + attaquant.getTmpPIN().charAt(i);
                 } else  {
-                        tmpDigit = attaquant.getLimitMin()[i] + (int) ( Math.random() * ((attaquant.getLimitMax()[i] - attaquant.getLimitMin()[i]) + 1 ) );
+                        tmpDigit = (attaquant.getLimitMin()[i] +1 ) + (int) ( Math.random() * ((attaquant.getLimitMax()[i] - attaquant.getLimitMin()[i])  ) );
                         tmpString = tmpString + tmpDigit;
                 }
             }
             createTmpPIN = tmpString;
-            System.out.println("Mr Bot propose : " + tmpString);
         }
+        System.out.println("Mr Bot propose : " + createTmpPIN);
         attaquant.setTmpPIN(createTmpPIN);
     }
 }

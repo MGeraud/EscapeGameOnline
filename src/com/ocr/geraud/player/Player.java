@@ -25,7 +25,7 @@ public abstract class Player {
 
     public void resetLimitMin (){
         int i;
-        for (i=0 ; i <= pinLenght; i++) {
+        for (i=0 ; i <= (pinLenght - 1); i++) {
             limitMin[i] = 0;
         }
     }

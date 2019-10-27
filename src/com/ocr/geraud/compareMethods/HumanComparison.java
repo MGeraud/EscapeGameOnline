@@ -36,7 +36,7 @@ public class HumanComparison implements Comparison{
                 }while (i <= (pinLenght - 1 ));
             } while (  nullIsNotValid != pinLenght); // double boucle qui permet de verifier contenu valide (longueur et type de contenu)
         challenger.setTmpComparisonAnswer(humanComparison);
-        for (int i = 0 ; i <= pinLenght ; i++ ) {
+        for (int i = 0 ; i <= (pinLenght -1 ) ; i++ ) {
             if (humanComparison.charAt(i) == '+') {
                 int valueOfChar = Character.getNumericValue(challenger.getTmpPIN().charAt(i));
                 challenger.limitMin[i] = valueOfChar;
