@@ -10,10 +10,10 @@ import com.ocr.geraud.player.HumanPlayer;
 import com.ocr.geraud.player.Player;
 
 public class ChallengerStrategy implements ModeJeuStrategy {
-    Player challenger = new HumanPlayer();
-    Player defender = new AIPlayer();
-    String maxtries = LoadProperties.getInstance().getProperty("MaxTries");
-    int maxTries = Integer.parseInt(maxtries);
+    private Player challenger = new HumanPlayer();
+    private Player defender = new AIPlayer();
+    private String maxtries = LoadProperties.getInstance().getProperty("MaxTries");
+    private int maxTries = Integer.parseInt(maxtries);
 
 
     @Override
@@ -32,8 +32,8 @@ public class ChallengerStrategy implements ModeJeuStrategy {
                 winner = true;
             }
             i++;
-        } while (winner == false && i <= maxTries);
-        if (winner == true) {
+        } while (!winner && i <= maxTries);
+        if (winner) {
             System.out.println("Bravo! Vous avez trouvé la bonne combinaison.");
         }
         if (i > maxTries) {

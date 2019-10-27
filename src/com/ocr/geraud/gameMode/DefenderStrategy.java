@@ -4,8 +4,6 @@ package com.ocr.geraud.gameMode;
 import com.ocr.geraud.LoadProperties;
 import com.ocr.geraud.PINguess.PINguess;
 import com.ocr.geraud.PINguess.RandomPINGuess;
-import com.ocr.geraud.PINguess.ScanPINGuess;
-import com.ocr.geraud.compareMethods.AIComparison;
 import com.ocr.geraud.compareMethods.Comparison;
 import com.ocr.geraud.compareMethods.HumanComparison;
 import com.ocr.geraud.player.AIPlayer;
@@ -14,10 +12,10 @@ import com.ocr.geraud.player.Player;
 
 public class DefenderStrategy implements ModeJeuStrategy{
 
-    String maxtries = LoadProperties.getInstance().getProperty("MaxTries");
-    int maxTries = Integer.parseInt(maxtries);
-    Player challenger = new AIPlayer();
-    Player defender = new HumanPlayer();
+    private String maxtries = LoadProperties.getInstance().getProperty("MaxTries");
+    private int maxTries = Integer.parseInt(maxtries);
+    private Player challenger = new AIPlayer();
+    private Player defender = new HumanPlayer();
 
     @Override
     public void jouer() {
@@ -37,8 +35,8 @@ public class DefenderStrategy implements ModeJeuStrategy{
                 winner = true;
             }
             i++;
-        } while (winner == false && i <= maxTries);
-        if (winner == true) {
+        } while (!winner && i <= maxTries);
+        if (winner) {
             System.out.println("Mr Bot a trouvé votre combinaison sans tricher en " + i + " essais.");
         }
         if (i > maxTries) {

@@ -8,7 +8,7 @@ public class AIPlayer extends Player {
 
     @Override
     public void createSecretPIN() {
-
+        System.out.println("C'est parti, Mr Bot a choisi sa combinaison secrète !");
         for (i = 0; i <= (pinLenght - 1); i++) {
             ;
             int tmpDigit = (int) (10 * (Math.random()));
