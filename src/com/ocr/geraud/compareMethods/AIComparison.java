@@ -5,6 +5,7 @@ import com.ocr.geraud.player.Player;
 
 public class AIComparison implements Comparison{
 
+
     @Override
     public void comparer(Player challenger, Player defender) {
         String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
