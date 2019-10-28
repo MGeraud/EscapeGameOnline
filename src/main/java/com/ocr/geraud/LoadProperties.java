@@ -9,7 +9,7 @@ public class LoadProperties {
      */
 
     private static Properties props = null;
-    private static final String fichierProperties = "config.properties";
+    private static final String fichier = "config.properties";
 
 
     private static LoadProperties instance = new LoadProperties();
@@ -27,7 +27,7 @@ public class LoadProperties {
         // Si le fichier de properties n'est pas chargé : on le charge
         if (props == null) {
             try {
-                InputStream is = LoadProperties.class.getResourceAsStream(fichierProperties);
+                InputStream is = LoadProperties.class.getResourceAsStream(fichier);
                 if (is == null) {
                     throw  new Exception();
                 }
