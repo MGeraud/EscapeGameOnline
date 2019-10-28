@@ -11,7 +11,7 @@ public class HumanPlayer extends Player {
         Scanner s = new Scanner(System.in);
 
         boolean isValid;
-        System.out.println("Veuillez choisir une combinaison secrete, je ne la montre pas au robot qui va devoir la deviner, promis!!!");
+        System.out.println("Veuillez choisir une combinaison secrete de " + pinLenghtString + " chiffres. Je ne la montre pas au robot qui va devoir la deviner, promis!!!");
         do {
             isValid = true;
             secretPIN = s.nextLine();

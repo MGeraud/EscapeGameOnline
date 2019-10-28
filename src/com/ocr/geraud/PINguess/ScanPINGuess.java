@@ -18,7 +18,7 @@ public class ScanPINGuess implements PINguess {
         Scanner s = new Scanner(System.in);
         String combinaison;
         boolean isValid;
-        System.out.println("Essayez de trouver la combinaison secrete. A vous de jouer :");
+        System.out.println("Essayez de trouver la combinaison secrete ( " + pinLenghtString + " chiffres). A vous de jouer :");
         do {
             isValid = true;
             combinaison = s.nextLine();
@@ -28,7 +28,7 @@ public class ScanPINGuess implements PINguess {
                 isValid = false;
                 System.out.println("Vous devez saisir une combinaison composée uniquement de chiffres.");
             }
-            if (combinaison.length() != pinLenght) System.out.println("Combinaison de 4 chiffres ni plus ni moins svp .");
+            if (combinaison.length() != pinLenght) System.out.println("Combinaison de " + pinLenghtString + " chiffres ni plus ni moins svp .");
 
         } while (combinaison.length() != pinLenght || isValid == false);
 
