@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class ScanPINGuess implements PINguess {
 
-    String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
-    int pinLenght = Integer.parseInt(pinLenghtString);
+    private String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
+    private int pinLenght = Integer.parseInt(pinLenghtString);
 
     /**
      * Player try to find PIN
@@ -30,7 +30,7 @@ public class ScanPINGuess implements PINguess {
             }
             if (combinaison.length() != pinLenght) System.out.println("Combinaison de " + pinLenghtString + " chiffres ni plus ni moins svp .");
 
-        } while (combinaison.length() != pinLenght || isValid == false);
+        } while (combinaison.length() != pinLenght || !isValid);
 
         attaquant.setTmpPIN(combinaison);
     }

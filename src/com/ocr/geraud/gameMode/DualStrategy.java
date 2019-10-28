@@ -31,6 +31,8 @@ public class DualStrategy implements ModeJeuStrategy {
         aiPlayer.resetLimitMin();
         aiPlayer.resetLimitMax();
         int i = 1;
+
+
         do {
             System.out.println("Essai  numero : " + i);
             humanPINGuess.pinTest(humanPlayer,aiPlayer);

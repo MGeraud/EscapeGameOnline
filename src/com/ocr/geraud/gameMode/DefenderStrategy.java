@@ -23,10 +23,11 @@ public class DefenderStrategy implements ModeJeuStrategy{
         challenger.resetLimitMin();
         PINguess challengerPINGuess = new RandomPINGuess();
         Comparison defenderComparison = new HumanComparison();
-
         defender.createSecretPIN();
         boolean winner = false;
         int i = 1;
+
+
         do {
             System.out.println("Essai  numero : " + i);
             challengerPINGuess.pinTest(challenger,defender);

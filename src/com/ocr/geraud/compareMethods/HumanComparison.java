@@ -10,8 +10,8 @@ public class HumanComparison implements Comparison{
     /**
      * Demande au joueur de rentrer la comparaison avec son code secret
      * redefini les limites min et max du random Bot en fonction de la reponse
-     * @param challenger
-     * @param defender
+     * @param challenger joueur attaquant
+     * @param defender joueur defandant
      */
 
     @Override

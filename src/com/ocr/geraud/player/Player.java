@@ -1,8 +1,6 @@
 package com.ocr.geraud.player;
 
 import com.ocr.geraud.LoadProperties;
-import com.ocr.geraud.PINguess.PINguess;
-import com.ocr.geraud.PINguess.RandomPINGuess;
 
 public abstract class Player {
     protected String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");

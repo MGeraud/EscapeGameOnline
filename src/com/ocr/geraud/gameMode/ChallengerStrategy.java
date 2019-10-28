@@ -20,10 +20,11 @@ public class ChallengerStrategy implements ModeJeuStrategy {
     public void jouer() {
         PINguess challengerPINGuess = new ScanPINGuess();
         Comparison defenderComparison = new AIComparison();
-
         defender.createSecretPIN();
         boolean winner = false;
         int i = 1;
+
+
         do {
             System.out.println("Essai  numero : " + i);
             challengerPINGuess.pinTest(challenger,defender);

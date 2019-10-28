@@ -1,6 +1,5 @@
 package com.ocr.geraud.player;
 
-import com.ocr.geraud.LoadProperties;
 
 import java.util.Scanner;
 
@@ -23,7 +22,7 @@ public class HumanPlayer extends Player {
             }
             if(secretPIN.length() != pinLenght) System.out.println("Combinaison de " + pinLenghtString + "chiffres ni plus ni moins svp .");
 
-        } while (secretPIN.length() != pinLenght || isValid == false);
+        } while (secretPIN.length() != pinLenght || !isValid);
     }
 
     public String getSecretPIN() {
