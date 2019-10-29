@@ -8,6 +8,8 @@ import com.ocr.geraud.compareMethods.Comparison;
 import com.ocr.geraud.player.AIPlayer;
 import com.ocr.geraud.player.HumanPlayer;
 import com.ocr.geraud.player.Player;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ChallengerStrategy implements ModeJeuStrategy {
     private Player challenger = new HumanPlayer();
@@ -15,6 +17,7 @@ public class ChallengerStrategy implements ModeJeuStrategy {
     private String maxtries = LoadProperties.getInstance().getProperty("MaxTries");
     private int maxTries = Integer.parseInt(maxtries);
 
+    private static final Logger logger = LogManager.getLogger(ChallengerStrategy.class);
 
     @Override
     public void jouer() {
@@ -36,6 +39,7 @@ public class ChallengerStrategy implements ModeJeuStrategy {
         } while (!winner && i <= maxTries);
         if (winner) {
             System.out.println("Bravo! Vous avez trouvé la bonne combinaison.");
+            logger.info("YEAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
         }
         if (i > maxTries) {
             System.out.println("Perdu, vous avez épuisé tous vos essais");
