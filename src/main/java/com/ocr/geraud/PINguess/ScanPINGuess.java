@@ -24,6 +24,10 @@ public class ScanPINGuess implements PINguess {
             combinaison = s.nextLine();
             try { //Laissons java verifier que l entree est bien composee uniquement de nombres
                 int a = Integer.parseInt(combinaison);
+                if (a < 0 ) {
+                    isValid = false;
+                    System.out.println("Vous devez saisir une combinaison composée uniquement de chiffres.");
+                }
             } catch (NumberFormatException e) {
                 isValid = false;
                 System.out.println("Vous devez saisir une combinaison composée uniquement de chiffres.");

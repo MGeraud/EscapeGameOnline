@@ -1,11 +1,11 @@
 package com.ocr.geraud;
 
-
 import com.ocr.geraud.gameMode.ChallengerStrategy;
 import com.ocr.geraud.gameMode.DefenderStrategy;
 import com.ocr.geraud.gameMode.DualStrategy;
 import com.ocr.geraud.gameMode.ModeJeuStrategy;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
@@ -13,7 +13,6 @@ public class Game {
     private int modeChoice;
     private String replayChoice ;
     private Scanner sc = new Scanner(System.in);
-
     /**
      * print game's introduction out
      * doesn't appear when replay
@@ -31,9 +30,9 @@ public class Game {
      */
     private void chooseMode() {
         do {
-            System.out.println("\nPour choisir Challenger tapez 1 , pour Defenseur tapez 2 , pour Duel tapez 3");
-            modeChoice = sc.nextInt();
-        } while (modeChoice != 1 && modeChoice!=2 && modeChoice!=3);
+                System.out.println("\nPour choisir Challenger tapez 1 , pour Defenseur tapez 2 , pour Duel tapez 3");
+                modeChoice = sc.nextInt();
+        } while (modeChoice != 1 && modeChoice!= 2 && modeChoice!= 3);
     }
 
     /**
@@ -59,11 +58,10 @@ public class Game {
             }
             System.out.println("\nVous avez maintenant 3 options : \nRejouer le même mode de jeu, tapez : R \nJouer à un autre mode du jeu, tapez : J \nArrêter de jouer, tapez : A");
             while (!"r".equals(replayChoice) && !"j".equals(replayChoice) && !"a".equals(replayChoice)) {
-
                 replayChoice = sc.nextLine();
                 replayChoice = replayChoice.toLowerCase();
             }
-            }while ("r".equals(replayChoice));
+        }while ("r".equals(replayChoice));
     }
 
     /**
