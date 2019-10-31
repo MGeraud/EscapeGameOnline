@@ -2,10 +2,14 @@ package com.ocr.geraud.compareMethods;
 
 import com.ocr.geraud.LoadProperties;
 import com.ocr.geraud.player.Player;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
 public class HumanComparison implements Comparison{
+    private static final Logger logger = LogManager.getLogger(HumanComparison.class);
+
 
     /**
      * Demande au joueur de rentrer la comparaison avec son code secret
@@ -18,7 +22,6 @@ public class HumanComparison implements Comparison{
     public void comparer(Player challenger, Player defender) {
         String pinLenghtString = LoadProperties.getInstance().getProperty("PINLenght");
         int pinLenght = Integer.parseInt(pinLenghtString);
-
         String humanComparison;
         int nullIsNotValid;
 
@@ -36,6 +39,7 @@ public class HumanComparison implements Comparison{
                 }while (i <= (pinLenght - 1 ));
             } while (  nullIsNotValid != pinLenght); // double boucle qui permet de verifier contenu valide (longueur et type de contenu)
         challenger.setTmpComparisonAnswer(humanComparison);
+        logger.info("Suite elements de comparaison defini par joueur, création des nouvelles limites pourle prochain essai random");
         for (int i = 0 ; i <= (pinLenght -1 ) ; i++ ) {
             if (humanComparison.charAt(i) == '+') {
                 int valueOfChar = Character.getNumericValue(challenger.getTmpPIN().charAt(i));

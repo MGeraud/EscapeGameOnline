@@ -4,6 +4,8 @@ import com.ocr.geraud.gameMode.ChallengerStrategy;
 import com.ocr.geraud.gameMode.DefenderStrategy;
 import com.ocr.geraud.gameMode.DualStrategy;
 import com.ocr.geraud.gameMode.ModeJeuStrategy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
@@ -12,6 +14,8 @@ public class Game {
     private int modeChoice;
     private String replayChoice ;
     private Scanner sc = new Scanner(System.in);
+    private static final Logger logger = LogManager.getLogger(Game.class);
+
     /**
      * print game's introduction out
      * doesn't appear when replay
@@ -33,6 +37,7 @@ public class Game {
                 try{
                     modeChoice = Integer.parseInt(sc.nextLine());
                 } catch (NumberFormatException e) {
+                    logger.info("Le joueur a saisi autre chose qu'un chiffre lors du choix de Mode de jeu. ");
                     System.out.println("Vous devez saisir 1 , 2 ou 3 ");
                     sc.reset();
                     modeChoice = 0;
@@ -49,23 +54,30 @@ public class Game {
             replayChoice ="";
             switch (modeChoice) {
                 case 1:
+                    logger.info("Lancement de la strategie challenger");
                     ModeJeuStrategy challenger = new ChallengerStrategy();
                     challenger.jouer();
                     break;
                 case 2:
+                    logger.info("Lancement de la strategie defender");
                     ModeJeuStrategy defenseur = new DefenderStrategy();
                     defenseur.jouer();
                     break;
                 case 3:
+                    logger.info("Lancement de la strategie dual");
                     ModeJeuStrategy duel = new DualStrategy();
                     duel.jouer();
                     break;
             }
             System.out.println("\nVous avez maintenant 3 options : \nRejouer le même mode de jeu, tapez : R \nJouer à un autre mode du jeu, tapez : J \nArrêter de jouer, tapez : A");
-            while (!"r".equals(replayChoice) && !"j".equals(replayChoice) && !"a".equals(replayChoice)) {
+            do {
                 replayChoice = sc.nextLine();
                 replayChoice = replayChoice.toLowerCase();
-            }
+                if (!"r".equals(replayChoice) && !"j".equals(replayChoice) && !"a".equals(replayChoice)){
+                    logger.info("Le joueur a saisi autre chose que les choix proposer pour rejouer ou non");
+                    System.out.println("Vous devez choisir entre R , J ou A .");
+                }
+            }while (!"r".equals(replayChoice) && !"j".equals(replayChoice) && !"a".equals(replayChoice));
         }while ("r".equals(replayChoice));
     }
 
