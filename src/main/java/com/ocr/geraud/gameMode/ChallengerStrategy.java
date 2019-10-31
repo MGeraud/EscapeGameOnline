@@ -19,6 +19,7 @@ public class ChallengerStrategy implements ModeJeuStrategy {
 
     private static final Logger logger = LogManager.getLogger(ChallengerStrategy.class);
 
+
     @Override
     public void jouer() {
         PINguess challengerPINGuess = new ScanPINGuess();
@@ -39,7 +40,6 @@ public class ChallengerStrategy implements ModeJeuStrategy {
         } while (!winner && i <= maxTries);
         if (winner) {
             System.out.println("Bravo! Vous avez trouvé la bonne combinaison.");
-            logger.info("YEAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
         }
         if (i > maxTries) {
             System.out.println("Perdu, vous avez épuisé tous vos essais");

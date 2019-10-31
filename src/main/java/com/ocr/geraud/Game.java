@@ -29,9 +29,14 @@ public class Game {
      * loop to choose game mode
      */
     private void chooseMode() {
-        do {
+            do {
                 System.out.println("\nPour choisir Challenger tapez 1 , pour Defenseur tapez 2 , pour Duel tapez 3");
-                modeChoice = sc.nextInt();
+                try{
+                    modeChoice = Integer.parseInt(sc.nextLine());
+                } catch (NumberFormatException e) {
+                    System.out.println("Vous devez saisir 1 , 2 ou 3 ");
+                    modeChoice = Integer.parseInt(sc.nextLine());
+                }
         } while (modeChoice != 1 && modeChoice!= 2 && modeChoice!= 3);
     }
 
