@@ -14,7 +14,7 @@ public class AIPlayer extends Player {
             String tmpString = Integer.toString(tmpDigit);
             secretPIN = secretPIN + tmpString;
         }
-        if (devMode.equals("true")) System.out.println(secretPIN);
+        if (devMode.equals("true")) System.out.println("Vous êtes en mode developper, voici la combinaison secrete choisie par Mr Bot " + secretPIN);
     }
 
     public String getSecretPIN() {
