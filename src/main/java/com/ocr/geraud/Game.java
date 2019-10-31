@@ -5,7 +5,6 @@ import com.ocr.geraud.gameMode.DefenderStrategy;
 import com.ocr.geraud.gameMode.DualStrategy;
 import com.ocr.geraud.gameMode.ModeJeuStrategy;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
@@ -35,7 +34,8 @@ public class Game {
                     modeChoice = Integer.parseInt(sc.nextLine());
                 } catch (NumberFormatException e) {
                     System.out.println("Vous devez saisir 1 , 2 ou 3 ");
-                    modeChoice = Integer.parseInt(sc.nextLine());
+                    sc.reset();
+                    modeChoice = 0;
                 }
         } while (modeChoice != 1 && modeChoice!= 2 && modeChoice!= 3);
     }
