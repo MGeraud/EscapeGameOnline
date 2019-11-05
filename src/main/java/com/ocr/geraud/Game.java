@@ -21,7 +21,7 @@ public class Game {
      * doesn't appear when replay
      */
     private void introduce() {
-        System.out.println("Vous voila arrivés au défi de recherche de cobinaison secrète d'Escape Game Online.");
+        System.out.println("Vous voila arrivés au défi de recherche de combinaison secrète d'Escape Game Online.");
         System.out.println("\nVous avez le choix entre 3 modes de jeu :");
         System.out.println("\nLe mode challenger : il vous faudra deviner la combinaison de " + pinLenghtString + " chiffres choisie par Mr Bot." );
         System.out.println("Le mode defenseur : il vous faudra choisir une combinaison de " + pinLenghtString + " chiffres, en espérant que Mr Bot n'arrivera pas à la deviner.");
@@ -37,7 +37,7 @@ public class Game {
                 try{
                     modeChoice = Integer.parseInt(sc.nextLine());
                 } catch (NumberFormatException e) {
-                    logger.info("Le joueur a saisi autre chose qu'un chiffre lors du choix de Mode de jeu. ");
+                    logger.error("Le joueur a saisi autre chose qu'un chiffre lors du choix de Mode de jeu. "+ e);
                     System.out.println("Vous devez saisir 1 , 2 ou 3 ");
                     sc.reset();
                     modeChoice = 0;

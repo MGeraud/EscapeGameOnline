@@ -33,7 +33,7 @@ public class ScanPINGuess implements PINguess {
                     System.out.println("Vous devez saisir une combinaison composée uniquement de chiffres.");
                 }
             } catch (NumberFormatException e) {
-                logger.info("Le joueur a saisi autre chose que des chiffres.");
+                logger.error("Le joueur a saisi autre chose que des chiffres. " + e);
                 isValid = false;
                 System.out.println("Vous devez saisir une combinaison composée uniquement de chiffres.");
             }
