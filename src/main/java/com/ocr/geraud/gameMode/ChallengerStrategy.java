@@ -42,7 +42,7 @@ public class ChallengerStrategy implements ModeJeuStrategy {
             System.out.println("Bravo! Vous avez trouvé la bonne combinaison.");
         }
         if (i > maxTries) {
-            System.out.println("Perdu, vous avez épuisé tous vos essais");
+            System.out.println("Perdu, vous avez épuisé tous vos essais, la bonne combinaison était : " + defender.getSecretPIN());
         }
     }
 }

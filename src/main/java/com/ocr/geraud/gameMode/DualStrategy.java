@@ -51,11 +51,11 @@ public class DualStrategy implements ModeJeuStrategy {
         if (winnerAI && winnerHuman) {
             System.out.println("Je ne sais pas comment c'est possible , mais EGALITE");
         } else if (winnerAI ) {
-            System.out.println("Mr Bot a gagné, il a été le plus rapide pour une fois ...");
+            System.out.println("Mr Bot a gagné, il a été le plus rapide pour une fois ... \n Sa combinaison était : " + aiPlayer.getSecretPIN());
         } else if (winnerHuman) {
             System.out.println("Vous avez vaincu Mr Bot, TROP fort!");
         } else  {
-            System.out.println("Aucun de vous n'a trouvé le code secret de l'autre, on pourrait dire EGALITE ... ou PERDU tous les 2!!!!");
+            System.out.println("Aucun de vous n'a trouvé le code secret de l'autre, on pourrait dire EGALITE ... ou PERDU tous les 2!!!! \n La combinaison de Mr Bot était " + aiPlayer.getSecretPIN());
         }
 
     }
