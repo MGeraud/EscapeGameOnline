@@ -1,11 +1,12 @@
 # **                ESCAPE GAME ONLINE              **
 
 Projet 3 du parcours developpeur d applications Java d OpenClassRooms
+Fait sur intellij IDEA avec jdk 12
 
 ### Fonctionnalité d'un Escape Game où il faut deviner une combinaison de chiffres. 3 modes possibles : ###
 * **challenger** : deviner la combinaison choisie par l'ordinateur
 * **defender** : choisir une combinaison que l'ordinateur devra deviner
-* **duel** : mode tour à tour entre l'ordinateur et le joueur, le 1er qui devine la combinaison de l'autre gagne.
+* **dual** : mode tour à tour entre l'ordinateur et le joueur, le 1er qui devine la combinaison de l'autre gagne.
 
 ### Pour utiliser cette application : ###
 - cloner le projet.
